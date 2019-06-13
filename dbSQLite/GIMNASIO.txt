@@ -1,0 +1,75 @@
+CREATE TABLE "USUARIO" (
+	"Id_u"	INTEGER NOT NULL,
+	"Nombre"	TEXT NOT NULL,
+	"Apellido"	TEXT NOT NULL,
+	"Altura"	REAL NOT NULL,
+	"Peso"	REAL NOT NULL,
+	"Contraseña"	TEXT NOT NULL,
+	PRIMARY KEY("Id_u")
+);
+
+CREATE TABLE "MONITOR" (
+	"Id_m"	TEXT NOT NULL,
+	"Nombre"	TEXT NOT NULL,
+	"Apellido"	TEXT NOT NULL,
+	"Formacion"	TEXT NOT NULL,
+	"Contraseña"	INTEGER NOT NULL,
+	PRIMARY KEY("Id_m")
+);
+
+CREATE TABLE "EJERCICIO" (
+	"Id_e"   INTEGER NOT NULL,
+	"Tipo"	TEXT NOT NULL,
+	"Descripcion"	TEXT NOT NULL,
+	"Nombre"	TEXT NOT NULL,
+	"Monitor"	TEXT NOT NULL,
+	FOREIGN KEY(Monitor) REFERENCES MONITOR("Id_m"),
+	PRIMARY KEY(Id_e)
+);
+
+INSERT INTO MONITOR VALUES('MFP1', 'Carlos', 'Segura', 'INEF', '');
+INSERT INTO MONITOR VALUES('MFP2', 'Manuel', 'Jímenez', 'TAFAD', '');
+INSERT INTO MONITOR VALUES('MFP3', 'Sara', 'Molina', 'INEF', '');
+INSERT INTO MONITOR VALUES('MFP4', 'Vanesa', 'Parra', 'Técnico en Artes Marciales Mixtas', '');
+INSERT INTO MONITOR VALUES('MFP5', 'Paco', 'López', 'Técnico en Krav Maga', '');
+INSERT INTO MONITOR VALUES('MFP6', 'Lucía', 'Sanz', 'Fisioterapeuta', '');
+
+
+INSERT INTO EJERCICIO VALUES(1,'Musculación','El press de banca, es un ejercicio que trabaja la zona superior del cuerpo(principalmente músculos pectorales)', 'Press banca', 'MFP1');
+INSERT INTO EJERCICIO VALUES(2,'Musculación','Ejercicio físico que consiste en flexionar las piernas de cuclillas', 'Sentadillas', 'MFP2');
+INSERT INTO EJERCICIO VALUES(3,'Musculación','Ejercicio de gimnasia cuya ejecución consiste en levantar el cuerpo mientras éste depende de una barra', 'Dominadas', 'MFP3');
+INSERT INTO EJERCICIO VALUES(4,'Musculación','Consiste en levantar una barra con peso por encima de los hombros hasta superar la cabeza', 'Press militar', 'MFP4');
+INSERT INTO EJERCICIO VALUES(5,'Musculación','Ejercicio con pesas consiste en levantar una barra desde el suelo hasta la cintura', 'Peso muerto', 'MFP5');
+INSERT INTO EJERCICIO VALUES(6,'Musculación','Adelantamos una pierna hacia delante e intentamos pegar con la rodilla en el suelo', 'Tijeras', 'MFP6');
+INSERT INTO EJERCICIO VALUES(7,'Cardio','Máquina que sirve para correr o andar sin moverse de un mismo sitio', 'Cinta de correr', 'MFP1');
+INSERT INTO EJERCICIO VALUES(8,'Cardio','Máquina que consta de dos pedales sobre los que se marcha y de dos barras verticales', 'Elíptica', 'MFP2');
+INSERT INTO EJERCICIO VALUES(9,'Cardio','Máquina de gimnasio que simula el ejercicio de una bicicleta', 'Bicicleta', 'MFP3');
+INSERT INTO EJERCICIO VALUES(10,'Cardio','Máquina que trabaja y mejora la musculatura de los bíceps y los tríceps', 'Remo', 'MFP4');
+
+
+INSERT INTO Usuario VALUES(1, 'Luis', 'Fernandez Ramirez', 1.89, 85, '');
+INSERT INTO Usuario VALUES(2, 'Daniel', 'Sanchez Borrego', 1.80, 78, '');
+INSERT INTO Usuario VALUES(3, 'Maria', 'Alvarez Fonseca', 1.72, 64, '');
+INSERT INTO Usuario VALUES(4, 'Juan', 'ESteban Matesanz', 1.87, 82, '');
+INSERT INTO Usuario VALUES(5, 'Marco', 'De las Heras Perez', 1.69, 55, '');
+INSERT INTO Usuario VALUES(6, 'Nacho', 'Fortes Rubio', 1.70, 81, '');
+INSERT INTO Usuario VALUES(7, 'Paula', 'Alamo Suarez', 1.67, 59, '');
+INSERT INTO Usuario VALUES(8, 'Daniel', 'Perez Alvarez', 1.79, 84, '');
+INSERT INTO Usuario VALUES(9, 'Paco', 'De Tomás', 1.70, 80, '');
+INSERT INTO Usuario VALUES(10, 'Juan', 'Alonso Mora', 1.72, 75, '');
+INSERT INTO Usuario VALUES(11, 'Pablo', 'Huertas Lopez', 1.70, 74, '');
+INSERT INTO Usuario VALUES(12, 'Sandra', 'Alvarez Torres', 1.60, 59, '');
+INSERT INTO Usuario VALUES(13, 'Elena', 'Morales Tejero', 1.70, 60, '');
+INSERT INTO Usuario VALUES(14, 'Francisco', 'Esteban Torrejon', 1.80, 78, '');
+INSERT INTO Usuario VALUES(15, 'Alberto', 'Sanchez Gomez', 1.77, 69, '');
+INSERT INTO Usuario VALUES(16, 'Rosario', 'De Luz Linares', 1.54, 55, '');
+INSERT INTO Usuario VALUES(17, 'Raul', 'Suarez Bermejo', 1.80, 95, '');
+INSERT INTO Usuario VALUES(18, 'Jose', 'Perez Roman', 1.59, 65, '');
+INSERT INTO Usuario VALUES(19, 'Carolina', 'Gomez Sanchez', 1.55, 62, '');
+INSERT INTO Usuario VALUES(20, 'Raquel', 'Cuadrado Formoso', 1.70, 60, '');
+INSERT INTO Usuario VALUES(21, 'Jorge', 'Sanz Perez', 1.80, 89, '');
+INSERT INTO Usuario VALUES(22, 'Santiago', 'Sevilla Augusto', 1.89, 78, '');
+INSERT INTO Usuario VALUES(23, 'Angel', 'Rodriguez Ramirez', 1.40, 65, '');
+INSERT INTO Usuario VALUES(24, 'Juan Manuel', 'Exposito Vieira', 1.98, 94, '');
+INSERT INTO Usuario VALUES(25, 'Daniel', 'Sanz Gordo', 1.56, 58, '');
+
